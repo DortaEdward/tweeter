@@ -1,7 +1,14 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-export const PORT = process.env.PORT;
-export const DB_URL = process.env.DB_URL;
+type Env = {
+  PORT: string,
+  DB_URL: string,
+}
 
-// openssl rand -base64 32
+export default<Env> {
+  PORT: process.env.PORT,
+  DB_URL: process.env.DB_URL
+}
+
+
