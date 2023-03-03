@@ -3,6 +3,8 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
 
+import { PORT } from './utils/env';
+
 const app = Express();
 
 app.use(cors());
@@ -16,6 +18,6 @@ app.get('/',(req,res) => {
 
 
 
-app.listen(5003, () => {
-  console.log('Listening on port 5003')
+app.listen(PORT, () => {
+  console.log(`Listening at http://localhost:${PORT}`)
 })
